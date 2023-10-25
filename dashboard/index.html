@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <title> Dashboard </title>
+      <link rel="stylesheet" href="styles.css" />
+      <!-- Font Awesome Cdn Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+      <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </head>
+    <body>
+      <div class="sidebar">
+        <div class="logo"></div>
+            <ul class="menu">
+                <li class="active">
+                    <a href="#">
+                        <i class="fs-4 bi-house text-secondary"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fs-4 bi-people text-secondary"></i>
+                        <span>Customers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fs-4 bi-car-front text-secondary"></i>
+                        <span>Cars</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fs-4 bi-person-bounding-box text-secondary"></i>
+                        <span>Drivers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fs-4 bi-cart2 text-secondary"></i>
+                        <span>Rents</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fs-4 bi-cash-coin text-secondary"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fs-4 bi-bar-chart text-secondary"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+                <li class="logout">
+                    <a href="#">
+                        <i class="bi bi-box-arrow-left text-secondary"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>   
+            </ul>
+        </div>
+      
+
+      <div class="main-content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <h1>EASY</h1>
+                <span>Car Rental</span>
+            </div>
+            <div class="user-info">
+                <img src="rentalcar.jpg" alt="">
+            </div>
+        </div>
+        <div class="card-container">
+            <h3 class="main-title">
+                Today's Info
+            </h3>
+            <div class="card-wrapper">
+                <div class="payment-card light-red">
+                    <div class="card-header">
+                        <div class="register--customers">
+                            <span class="customer-title">
+                                Registerd Customers
+                            </span>
+                            <span class="customer-value">
+                                140
+                            </span>
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-card light-purple">
+                    <div class="card-header">
+                        <div class="register--customers">
+                            <span class="customer-title">
+                                Total Bookings
+                            </span>
+                            <span class="customer-value">
+                                70
+                            </span>
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-card light-green">
+                    <div class="card-header">
+                        <div class="register--customers">
+                            <span class="customer-title">
+                                Avaiable Cars
+                            </span>
+                            <span class="customer-value">
+                                10
+                            </span>
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-card light-blue">
+                    <div class="card-header">
+                        <div class="register--customers">
+                            <span class="customer-title">
+                                Reserved Cars
+                            </span>
+                            <span class="customer-value">
+                                50
+                            </span>
+                            <i class="fa-solid fa-car-on"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-card light-green">
+                    <div class="card-header">
+                        <div class="register--customers">
+                            <span class="customer-title">
+                                Maintaining Cars
+                            </span>
+                            <span class="customer-value">
+                                10
+                            </span>
+                            <i class="fa-solid fa-car-burst"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-card light-yellow">
+                    <div class="card-header">
+                        <div class="register--customers">
+                            <span class="customer-title">
+                                Available Drivers
+                            </span>
+                            <span class="customer-value">
+                                10
+                            </span>
+                            <i class="fa-solid fa-user"></i> 
+                        </div>
+                    </div>
+                </div>
+                        
+
+                    
+
+                        
+                        
+                        <!-- <div class="bookings">
+                            <span class="title">
+                                Total Bookings
+                            </span>
+                            <span class="value">
+                                40
+                            </span>
+                        </div>
+                        <i class="fa-solid fa-book"></i>
+    
+                        <div class="car-available">
+                            <span class="title">
+                                Avaiable Cars
+                            </span>
+                            <span class="value">
+                                40
+                            </span>
+                        </div>
+                        <i class="fa-solid fa-car"></i>
+    
+                        <div class="reserved-cars">
+                            <span class="title">
+                               Reserved Cars
+                            </span>
+                            <span class="value">
+                                40
+                            </span>
+                        </div>
+                        <i class="fa-solid fa-car-on"></i>
+    
+                        <div class="maintaining-cars">
+                            <span class="title">
+                                Maintaining Cars
+                            </span>
+                            <span class="value">
+                                40
+                            </span>
+                        </div>
+                        <i class="fa-solid fa-car-burst"></i>
+    
+                        <div class="available-cars">
+                            <span class="title">
+                                Available Drivers
+                            </span>
+                            <span class="value">
+                                40
+                            </span>
+                        </div>
+                        <i class="fa-solid fa-user"></i> -->
+                   
+            </div>
+          </div>
+      </div>
+    
+      
+    </body>
+    </html>
