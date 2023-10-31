@@ -1,6 +1,7 @@
 package lk.easy.car_rental.config;
 
 import lk.easy.car_rental.repo.CustomerRepo;
+import lk.easy.car_rental.repo.DriverRepo;
 import lk.easy.car_rental.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -22,7 +23,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = {CustomerRepo.class, UserRepo.class})
+@EnableJpaRepositories(basePackageClasses = {CustomerRepo.class, UserRepo.class, DriverRepo.class})
 @PropertySource("classpath:application.properties")
 public class JPAConfig {
     @Autowired
