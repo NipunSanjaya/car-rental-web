@@ -8,4 +8,6 @@ public interface CustomerService {
     public void saveCustomer(CustomerDTO customerDTO) throws RuntimeException;
 
     public List<CustomerDTO> getAllCustomer() throws RuntimeException;
+
+    public void deleteCustomer(String nic) throws RuntimeException;
 }

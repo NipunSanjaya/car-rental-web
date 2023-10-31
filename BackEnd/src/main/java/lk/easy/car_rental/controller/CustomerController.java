@@ -4,9 +4,7 @@ import lk.easy.car_rental.dto.CustomerDTO;
 import lk.easy.car_rental.service.CustomerService;
 import lk.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 public class CustomerController {
 
@@ -25,6 +23,14 @@ public class CustomerController {
     public ResponseUtil getAll() {
 
         return new ResponseUtil("OK", "Successfully Saved..!", customerService.getAllCustomer());
+
+    }
+
+    @DeleteMapping
+    public ResponseUtil deleteCustomer(@RequestParam String nic) {
+
+        customerService.deleteCustomer(nic);
+        return new ResponseUtil("OK", "Successfully Deleted..!", "");
 
     }
 }
