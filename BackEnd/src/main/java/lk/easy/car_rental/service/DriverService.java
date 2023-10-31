@@ -13,4 +13,8 @@ public interface DriverService {
     public DriverDTO getDriver() throws RuntimeException;
 
     public List<DriverDTO> getAllDrivers() throws RuntimeException;
+
+    public Long countAvailableDrivers() throws RuntimeException;
+
+    public Long countReservedDrivers() throws RuntimeException;
 }

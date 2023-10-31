@@ -43,4 +43,32 @@ public class DriverController {
         return new ResponseUtil("OK", "Successfully Loaded..!", driverService.getAllDrivers());
 
     }
+
+    @GetMapping(path = "/available")
+    public ResponseUtil availableDrivers() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", driverService.countAvailableDrivers());
+
+    }
+
+    @GetMapping(path = "/reserved")
+    public ResponseUtil reservedDrivers() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", driverService.countReservedDrivers());
+
+    }
+
+    @GetMapping
+    public ResponseUtil getCurrentDriver() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", driverService.getDriver());
+
+    }
+
+    @GetMapping(params = {"nic"})
+    public ResponseUtil getDriverSchedule(String nic) {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", rentService.getDriverSchedule(nic));
+
+    }
 }

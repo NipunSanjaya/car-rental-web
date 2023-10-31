@@ -62,4 +62,14 @@ public class DriverServiceImpl implements DriverService {
         return mapper.map(driverRepo.findAll(), new TypeToken<ArrayList<DriverSpDTO>>() {
         }.getType());
     }
+
+    @Override
+    public Long countAvailableDrivers() throws RuntimeException {
+        return driverRepo.countAvailableDrivers();
+    }
+
+    @Override
+    public Long countReservedDrivers() throws RuntimeException {
+        return driverRepo.countReservedDrivers();
+    }
 }
