@@ -50,4 +50,9 @@ public class CustomerServiceImpl implements CustomerService {
         customer.getUser().setRole("Customer");
         customerRepo.save(customer);
     }
+
+    @Override
+    public Long countCustomers() throws RuntimeException {
+        return customerRepo.countCustomerByNic();
+    }
 }

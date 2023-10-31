@@ -41,4 +41,11 @@ public class CustomerController {
         return new ResponseUtil("OK", "Successfully Updated..!", "");
 
     }
+
+    @GetMapping(path = "/count")
+    public ResponseUtil countCustomers(){
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", customerService.countCustomers());
+
+    }
 }

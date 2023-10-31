@@ -12,4 +12,6 @@ public interface CustomerService {
     public void deleteCustomer(String nic) throws RuntimeException;
 
     public void updateCustomer(CustomerDTO customerDTO) throws RuntimeException;
+
+    public Long countCustomers() throws RuntimeException;
 }
