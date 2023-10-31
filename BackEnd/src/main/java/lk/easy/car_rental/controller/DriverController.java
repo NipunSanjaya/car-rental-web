@@ -6,6 +6,7 @@ import lk.easy.car_rental.service.DriverService;
 import lk.easy.car_rental.service.RentService;
 import lk.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,6 +34,13 @@ public class DriverController {
         driverDTO.setUser(new UserDTO(username, password, "Driver"));
         driverService.updateDriver(driverDTO);
         return new ResponseUtil("OK", "Successfully Updated..!", "");
+
+    }
+
+    @GetMapping(path = "/all")
+    public ResponseUtil getAll() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", driverService.getAllDrivers());
 
     }
 }
