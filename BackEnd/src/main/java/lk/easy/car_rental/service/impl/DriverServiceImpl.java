@@ -27,4 +27,21 @@ public class DriverServiceImpl implements DriverService {
 
         driverRepo.save(driver);
     }
+
+    @Override
+    public void updateDriver(DriverDTO driverDTO) throws RuntimeException {
+
+        Driver driver = mapper.map(driverDTO, Driver.class);
+
+        if (!driverRepo.existsById(driverDTO.getNic())) throw new RuntimeException("Invalid Driver..!");
+
+        Driver driver1 = driverRepo.findById(driverDTO.getNic()).get();
+
+        driver.setLicenseImage(driver1.getLicenseImage());
+
+        driver.setAvailabilityStatus("YES");
+        driver.getUser().setRole("Driver");
+
+        driverRepo.save(driver);
+    }
 }
