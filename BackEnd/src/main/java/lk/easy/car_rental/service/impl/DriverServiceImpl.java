@@ -72,4 +72,10 @@ public class DriverServiceImpl implements DriverService {
     public Long countReservedDrivers() throws RuntimeException {
         return driverRepo.countReservedDrivers();
     }
+
+    @Override
+    public void deleteDriver(String nic) throws RuntimeException {
+        if (!driverRepo.existsById(nic)) throw new RuntimeException("Invalid Driver..!");
+        driverRepo.deleteById(nic);
+    }
 }

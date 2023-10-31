@@ -6,10 +6,7 @@ import lk.easy.car_rental.service.DriverService;
 import lk.easy.car_rental.service.RentService;
 import lk.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 public class DriverController {
 
@@ -71,4 +68,13 @@ public class DriverController {
         return new ResponseUtil("OK", "Successfully Loaded..!", rentService.getDriverSchedule(nic));
 
     }
+
+    @DeleteMapping
+    public ResponseUtil deleteDriver(String nic){
+
+        driverService.deleteDriver(nic);
+        return new ResponseUtil("OK", "Successfully Deleted..!", "");
+
+    }
+
 }
