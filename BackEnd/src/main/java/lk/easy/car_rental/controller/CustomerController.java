@@ -33,4 +33,12 @@ public class CustomerController {
         return new ResponseUtil("OK", "Successfully Deleted..!", "");
 
     }
+
+    @PutMapping
+    public ResponseUtil updateCustomer(@RequestBody CustomerDTO customerDTO) {
+
+        customerService.updateCustomer(customerDTO);
+        return new ResponseUtil("OK", "Successfully Updated..!", "");
+
+    }
 }
