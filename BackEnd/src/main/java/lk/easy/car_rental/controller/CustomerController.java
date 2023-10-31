@@ -4,6 +4,7 @@ import lk.easy.car_rental.dto.CustomerDTO;
 import lk.easy.car_rental.service.CustomerService;
 import lk.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -17,6 +18,13 @@ public class CustomerController {
 
         customerService.saveCustomer(customerDTO);
         return new ResponseUtil("OK", "Successfully Saved..!", "");
+
+    }
+
+    @GetMapping
+    public ResponseUtil getAll() {
+
+        return new ResponseUtil("OK", "Successfully Saved..!", customerService.getAllCustomer());
 
     }
 }
