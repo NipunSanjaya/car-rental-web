@@ -4,7 +4,13 @@ import lk.easy.car_rental.dto.CustomerDTO;
 import lk.easy.car_rental.service.CustomerService;
 import lk.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+
+@RestController
+@CrossOrigin
+@RequestMapping("/customer")
+@Transactional
 
 public class CustomerController {
 

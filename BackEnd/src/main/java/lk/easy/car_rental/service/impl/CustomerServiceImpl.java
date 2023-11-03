@@ -4,13 +4,19 @@ import lk.easy.car_rental.dto.CustomerDTO;
 import lk.easy.car_rental.entity.Customer;
 import lk.easy.car_rental.repo.CustomerRepo;
 import lk.easy.car_rental.service.CustomerService;
+import net.bytebuddy.implementation.auxiliary.AuxiliaryType;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
+@Transactional
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired

@@ -1,5 +1,6 @@
 package lk.easy.car_rental.config;
 
+import lk.easy.car_rental.service.CarService;
 import lk.easy.car_rental.service.CustomerService;
 import lk.easy.car_rental.service.DriverService;
 import lk.easy.car_rental.service.UserService;
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import(JPAConfig.class)
-@ComponentScan(basePackageClasses = {CustomerService.class,UserService.class, DriverService.class})
+@ComponentScan(basePackageClasses = {CustomerService.class,UserService.class, DriverService.class, CarService.class})
 public class WebRootConfig {
 
     @Bean

@@ -8,6 +8,10 @@ import lk.easy.car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@RestController
+@RequestMapping("/driver")
+@CrossOrigin
+
 public class DriverController {
 
     @Autowired
