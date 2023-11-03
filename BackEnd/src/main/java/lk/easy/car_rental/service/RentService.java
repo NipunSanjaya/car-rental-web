@@ -20,4 +20,6 @@ public interface RentService {
     public RentDTO getRentByRentId(String rentId) throws RuntimeException;
 
     public List<RentDTO> getRentByNic(String nic) throws RuntimeException;
+
+    public List<RentDTO> getAllRents() throws RuntimeException;
 }

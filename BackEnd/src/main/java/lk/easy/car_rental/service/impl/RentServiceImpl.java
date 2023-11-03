@@ -144,4 +144,12 @@ public class RentServiceImpl implements RentService {
 
     }
 
+    @Override
+    public List<RentDTO> getAllRents() throws RuntimeException {
+
+        return mapper.map(rentRepo.findAll(), new TypeToken<ArrayList<RentDTO>>() {
+        }.getType());
+
+    }
+
 }
