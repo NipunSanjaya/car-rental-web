@@ -9,4 +9,6 @@ public interface RentService {
     public List<RentDetailDTO> getDriverSchedule(String nic) throws RuntimeException;
 
     public void requestRent(RentDTO rentDTO) throws RuntimeException;
+
+    public String generateNewRentId() throws RuntimeException;
 }
