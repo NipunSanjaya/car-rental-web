@@ -28,4 +28,13 @@ public class RentController {
         return new ResponseUtil("OK", "Successfully Requested..!", rentService.generateNewRentId());
 
     }
+
+    @GetMapping(params = "username")
+    public ResponseUtil getCustomer(@RequestParam String username) {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", rentService.getCustomerByUsername(username));
+
+    }
+
+
 }

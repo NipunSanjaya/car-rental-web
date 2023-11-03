@@ -1,5 +1,6 @@
 package lk.easy.car_rental.service.impl;
 
+import lk.easy.car_rental.dto.CustomerDTO;
 import lk.easy.car_rental.dto.RentDTO;
 import lk.easy.car_rental.dto.RentDetailDTO;
 import lk.easy.car_rental.entity.Car;
@@ -85,6 +86,13 @@ public class RentServiceImpl implements RentService {
 
         String lastRentId = rentRepo.getLastRentId();
         return lastRentId != null ? String.format("RID-%03d", (Integer.parseInt(lastRentId.replace("RID-", "")) + 1)) : "RID-001";
+
+    }
+
+    @Override
+    public CustomerDTO getCustomerByUsername(String username) throws RuntimeException {
+
+        return mapper.map(customerRepo.getCustomerByUsername(username), CustomerDTO.class);
 
     }
 }

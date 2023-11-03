@@ -1,5 +1,6 @@
 package lk.easy.car_rental.service;
 
+import lk.easy.car_rental.dto.CustomerDTO;
 import lk.easy.car_rental.dto.RentDTO;
 import lk.easy.car_rental.dto.RentDetailDTO;
 
@@ -11,4 +12,6 @@ public interface RentService {
     public void requestRent(RentDTO rentDTO) throws RuntimeException;
 
     public String generateNewRentId() throws RuntimeException;
+
+    public CustomerDTO getCustomerByUsername(String username) throws RuntimeException;
 }
