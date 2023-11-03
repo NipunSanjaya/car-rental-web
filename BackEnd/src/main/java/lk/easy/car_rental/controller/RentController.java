@@ -65,5 +65,12 @@ public class RentController {
 
     }
 
+    @GetMapping(path = "/count")
+    public ResponseUtil countRents() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", rentService.countRents());
+
+    }
+
 
 }

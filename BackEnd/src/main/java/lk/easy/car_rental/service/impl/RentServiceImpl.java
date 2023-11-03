@@ -152,4 +152,11 @@ public class RentServiceImpl implements RentService {
 
     }
 
+    @Override
+    public Long countRents() throws RuntimeException {
+
+        return rentRepo.countBookings();
+
+    }
+
 }
