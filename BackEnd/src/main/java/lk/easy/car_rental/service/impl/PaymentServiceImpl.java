@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -45,5 +46,49 @@ public class PaymentServiceImpl implements PaymentService {
         return mapper.map(paymentRepo.findAll(), new TypeToken<ArrayList<PaymentDTO>>() {
         }.getType());
 
+    }
+
+    @Override
+    public List<PaymentDTO> getPaymentsByNic(String nic) throws RuntimeException {
+
+        return mapper.map(paymentRepo.findAllByRentId_Nic_Nic(nic), new TypeToken<ArrayList<PaymentDTO>>() {
+        }.getType());
+
+    }
+
+    @Override
+    public List getDailyIncome() throws RuntimeException {
+
+        return paymentRepo.getDailyIncome();
+
+    }
+
+    @Override
+    public List getMonthlyIncome() throws RuntimeException {
+        return paymentRepo.getMonthlyIncome();
+    }
+
+    @Override
+    public List getYearlyIncome() throws RuntimeException {
+
+        return paymentRepo.getYearlyIncome();
+
+    }
+
+    @Override
+    public BigDecimal getCurrentDayIncome() throws RuntimeException {
+        return paymentRepo.getCurrentDayIncome();
+    }
+
+    @Override
+    public BigDecimal getCurrentMonthIncome() throws RuntimeException {
+
+        return paymentRepo.getCurrentMonthIncome();
+    }
+
+    @Override
+    public BigDecimal getCurrentYearIncome() throws RuntimeException {
+
+        return paymentRepo.getCurrentYearIncome();
     }
 }

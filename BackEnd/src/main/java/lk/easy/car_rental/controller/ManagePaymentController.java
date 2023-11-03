@@ -31,5 +31,53 @@ public class ManagePaymentController {
 
     }
 
+    @GetMapping(params = {"nic"})
+    public ResponseUtil getPaymentsByNic(String nic) {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", paymentService.getPaymentsByNic(nic));
+
+    }
+
+    @GetMapping(path = "/daily")
+    public ResponseUtil getDailyIncome() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", paymentService.getDailyIncome());
+
+    }
+
+    @GetMapping(path = "/monthly")
+    public ResponseUtil getMonthlyIncome() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", paymentService.getMonthlyIncome());
+
+    }
+
+    @GetMapping(path = "/yearly")
+    public ResponseUtil getYearlyIncome() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", paymentService.getYearlyIncome());
+
+    }
+
+    @GetMapping(path = "/day")
+    public ResponseUtil getDayIncome() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", paymentService.getCurrentDayIncome());
+
+    }
+
+    @GetMapping(path = "/month")
+    public ResponseUtil getMonthIncome() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", paymentService.getCurrentMonthIncome());
+
+    }
+
+    @GetMapping(path = "/year")
+    public ResponseUtil getYearIncome() {
+
+        return new ResponseUtil("OK", "Successfully Loaded..!", paymentService.getCurrentYearIncome());
+
+    }
 
 }
