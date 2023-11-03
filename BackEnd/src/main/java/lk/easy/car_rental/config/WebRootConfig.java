@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import(JPAConfig.class)
-@ComponentScan(basePackageClasses = {CustomerService.class,UserService.class, DriverService.class, CarService.class, RentService.class})
+@ComponentScan(basePackageClasses = {CustomerService.class,UserService.class, DriverService.class, CarService.class, RentService.class, PaymentService.class})
 public class WebRootConfig {
 
     @Bean
