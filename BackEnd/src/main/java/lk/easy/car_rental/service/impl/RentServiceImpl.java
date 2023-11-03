@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -93,6 +95,37 @@ public class RentServiceImpl implements RentService {
     public CustomerDTO getCustomerByUsername(String username) throws RuntimeException {
 
         return mapper.map(customerRepo.getCustomerByUsername(username), CustomerDTO.class);
+
+    }
+
+    @Override
+    public void acceptRentRequest(String rentId, String option) throws RuntimeException {
+
+        Rent rent = rentRepo.findById(rentId).get();
+
+        if (option.equals("accepted")) {
+            rent.setStatus("Accepted");
+            rent.setDescription("Rent Accepted on " + LocalDate.now() + " " + LocalTime.now());
+        } else if (option.equals("reject")) {
+            rent.setStatus("Rejected");
+            for (RentDetail rentDetail : rent.getRentDetails()) {
+                if (rentDetail.getDriver()!=null){
+                    rentDetail.getDriver().setAvailabilityStatus("YES");
+                }
+            }
+            rent.setDescription("Rent Rejected on " + LocalDate.now() + " " + LocalTime.now());
+        } else {
+            rent.setStatus("Closed");
+            for (RentDetail rentDetail : rent.getRentDetails()) {
+                if (rentDetail.getDriver()!=null){
+                    rentDetail.getDriver().setAvailabilityStatus("YES");
+                    rentDetail.getCar().setAvailability("MAINTAIN");
+                }
+            }
+            rent.setDescription("Rent Closed on " + LocalDate.now() + " " + LocalTime.now());
+        }
+
+        rentRepo.save(rent);
 
     }
 }
