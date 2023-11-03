@@ -16,4 +16,8 @@ public interface RentService {
     public CustomerDTO getCustomerByUsername(String username) throws RuntimeException;
 
     public void acceptRentRequest(String rentId, String option) throws RuntimeException;
+
+    public RentDTO getRentByRentId(String rentId) throws RuntimeException;
+
+    public List<RentDTO> getRentByNic(String nic) throws RuntimeException;
 }

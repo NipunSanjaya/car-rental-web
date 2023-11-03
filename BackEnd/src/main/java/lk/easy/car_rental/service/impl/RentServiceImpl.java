@@ -128,4 +128,20 @@ public class RentServiceImpl implements RentService {
         rentRepo.save(rent);
 
     }
+
+    @Override
+    public RentDTO getRentByRentId(String rentId) throws RuntimeException {
+
+        return mapper.map(rentRepo.findById(rentId), RentDTO.class);
+
+    }
+
+    @Override
+    public List<RentDTO> getRentByNic(String nic) throws RuntimeException {
+
+        return mapper.map(rentRepo.getRentsByNic_Nic(nic), new TypeToken<ArrayList<RentDTO>>() {
+        }.getType());
+
+    }
+
 }
