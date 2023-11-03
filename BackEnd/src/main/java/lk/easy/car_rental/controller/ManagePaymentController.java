@@ -1,12 +1,26 @@
 package lk.easy.car_rental.controller;
 
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lk.easy.car_rental.dto.PaymentDTO;
+import lk.easy.car_rental.service.PaymentService;
+import lk.easy.car_rental.util.ResponseUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/payment")
 @CrossOrigin
 public class ManagePaymentController {
+
+    @Autowired
+    PaymentService paymentService;
+
+    @PostMapping
+    public ResponseUtil savePayment(@RequestBody PaymentDTO paymentDTO) {
+
+        paymentService.savePayment(paymentDTO);
+        System.out.println(paymentDTO);
+        return new ResponseUtil("OK", "Successfully Saved..!", "");
+
+    }
 }
